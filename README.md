@@ -11,7 +11,7 @@
  
    data = CityState.new( 'chennai' )
 
-    data.get_date  
+    data.get_data  
 
 ###  Response
    
