@@ -1,23 +1,46 @@
 # Web Token Gem for simplification of JWT
 
-## Step 1
-	gem install indian-city-state
+# Initialization
+	require 'indian-city-state'
 
-## Step 2
+	city_state = CityState.new
 
-	 require 'indian-city-state'
-	 
-## Step 3
- 
-   data = CityState.new( 'chennai' )
+# State
+	
+	state = city_state.state
 
-    data.get_data  
+# City
 
-###  Response
-   
-    # {:city=>"Chennai", :state=>"Tamil Nadu"}
+	city = 	city_state.city
+
+# Get State By City
+	
+	state = city_state.get_state('chennai')
+
+## Result
+	
+	{:city=>"Chennai", :state=>"Tamil Nadu"}
+
+# Get Cities by State
+	
+	cities = city_state.get_city('tamil nadu')
+
+## Result
+	
+	 ["Arakkonam", "Arcot", "Aruppukkottai", "Bhavani", .....]
+
+# Search By Key word 
+	
+	search_result = city_state.search('chen')
+
+## Result
+	
+	[{:city=>"Chennai", :state=>"Tamil Nadu"}]
 
 # Gem Location
+	
 		https://rubygems.org/gems/indian-city-state
 
 #Gem In Git
+	
+		https://github.com/velu-dev/indian-city-state

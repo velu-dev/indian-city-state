@@ -1,17 +1,41 @@
 require 'byebug'
 class CityState
-	def initialize(city)
+	def initialize
+
+	end
+
+	def get_state(city)
 		city_state_values = data
-		city_state_values.map do|city_data|
-			if city_data[:city].downcase == city.downcase
-				@cityData = city_data
-			end	
-		end
+      city_state_values.map do|city_data|
+      if city_data[:city].downcase == city.downcase
+        @cityData = city_data
+      end 
+    end
+    @cityData
 	end
-	def get_data
-		result = @cityData
-		result
-	end
+  def get_city(state)
+    @cities = []
+    data.map do|ii| 
+      if ii[:state].downcase == state.downcase
+        @cities << ii[:city]
+      end
+    end
+    @cities
+  end
+
+  def search(key)
+    @cityData = []
+    data.find_all do |val|
+      @cityData = val[:city] =~ /#{key}/i
+    end
+  end
+  def city
+    data.map{|i| i[:city]}.uniq
+  end
+  def state
+    data.map{|i| i[:state]}.uniq
+  end
+
 private
 	def data
 		attributes = [

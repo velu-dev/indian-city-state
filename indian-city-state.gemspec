@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'indian-city-state'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2018-11-22'
   s.summary     = "find city and state"
   s.description = "to find city and state gem"
